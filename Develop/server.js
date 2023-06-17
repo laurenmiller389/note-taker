@@ -31,36 +31,6 @@ app.get('*', (req, res) =>
     res.sendFile(path.join(__direname, '/public/index.html'))
 );
 
-
-
-//if we don't have a helper file/util in this project, we also need to put our readFile in here for the get and post /api
-app.get('/api/notes', (req, res) => {
-    fs.readFile('./db/db.json', 'utf8', (err, data) => {
-        if (err) {
-            console.error(err);
-        } else {
-            const parsedData = JSON.parse(data);
-            res.json(parsedData);
-        }
-    });
-});
-
-//POST /api: get new note, save on req.body, add to db.json, return new note to client (writeFIle)
-app.post('api/notes', (req, res) => {
-    fs.readFile('./db/db.json', 'utf8', (err, data) => {
-        if (err) {
-            console.error(err);
-        } else {
-            const parsedData = JSON.parse(data);
-            const newNote = req.body;
-            parsedData.push(newNote);
-            fs.writeFile('./db/db.json')
-        }
-
-    });
-})
-
-
 //console log the url for the se4rver
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT} 🚀`)
