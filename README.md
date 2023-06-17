@@ -4,6 +4,8 @@
 
 This project is a note-taking application where the user will click 'Get Started' on the homepage to navigate towards the note-taker. The user is then able to take notes within the browser and add to their collection.
 
+Here is the deployment link: https://this-is-the-note-taker-92cd98ab4dcd.herokuapp.com/
+
 ## Table of Contents
 
 - [Installation](#installation)
